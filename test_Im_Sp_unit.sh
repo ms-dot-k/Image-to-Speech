@@ -6,7 +6,7 @@ TRANS=${ROOT}/transcription
 DEVICE_ID=0
 
 REF=data_to/COCO_2014
-CKPT=./pretrained/IM_to_SP_unit.ckpt
+CKPT=./pretrained/Im_unit_to_Speech_Pretrained.ckpt
 Fairseq_path=path_to/fairseq
 
 python test_Im_Sp_unit.py \
