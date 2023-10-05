@@ -76,6 +76,10 @@ Please put the extracted units as the above directory structure.
 Please download `SeiT_weights.tar` from SeiT [github](https://github.com/naver-ai/seit/releases/tag/v0.0) and extract it.
 Put `tokenizer.ckpt` and `codebook.ckpt` in `./pretrained/` directory.
 
+## Unit-based Vocoder
+Please download pre-trained unit-based vocoder [CKPT](https://kaistackr-my.sharepoint.com/:u:/g/personal/ms_k_kaist_ac_kr/EclA4PVVEuhEuEuGXhQHxCsBYkEbrGVdn45Y2hvgApoSUA?e=XUkqw6) and [CFG](https://kaistackr-my.sharepoint.com/:u:/g/personal/ms_k_kaist_ac_kr/EVgUckoy14tKnbyt7NeSgzkBSjgcR0D7ERRguxqQ68TpYw?e=lNoin0).
+Put `g_00950000` and `config.json` in `./Vocoder/` directory.
+
 ## Testing the Model
 To test the model, modify some argument in `test_Im_Sp.sh` and `test_Im_Sp_unit.sh`. <br>
 Please refer below for the argument information.
