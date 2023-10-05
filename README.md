@@ -69,7 +69,7 @@ Flickr8k_audio
 ## Extracting Speech Unit
 We directly utilized the pre-trained K-means cluster model of [link](https://github.com/facebookresearch/fairseq/tree/main/examples/textless_nlp/gslm/speech2unit).
 Please refer to the repository to extract speech unit (HuBERT Base + KM200).
-The differences between the repository is the output format, we save each speech unit by using
+We use different output format with the repository, we save each speech unit by using
 ```
 feat = FR.get_feature(file)
 pred = kmeans_model.predict(feat)
