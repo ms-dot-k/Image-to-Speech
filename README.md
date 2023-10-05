@@ -72,6 +72,10 @@ Please refer to the repository to extract speech unit (HuBERT Base + KM200).
 The differences between the repository is the output format, we save each speech unit by using `torch.save(extracted_unit.cpu(), save_path + '.unit')`.
 Please put the extracted units as the above directory structure.
 
+## Image Unit Extractor
+Please download `SeiT_weights.tar` from SeiT [github](https://github.com/naver-ai/seit/releases/tag/v0.0) and extract it.
+Put `tokenizer.ckpt` and `codebook.ckpt` in `./pretrained/` directory.
+
 ## Testing the Model
 To test the model, modify some argument in `test_Im_Sp.sh` and `test_Im_Sp_unit.sh`. <br>
 Please refer below for the argument information.
