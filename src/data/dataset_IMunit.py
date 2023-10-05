@@ -85,7 +85,7 @@ class UnitDataset(Dataset):
                 if d['split'] == mode:
                     im_path = os.path.join(fl_im, d['filename'])
                     for caption in range(5):
-                        sp_path = os.path.join(fl_sp, 'flickr_audio/wavs', d['filename'][:-4] + f'_{caption}.unit')
+                        sp_path = os.path.join(fl_sp, d['filename'][:-4] + f'_{caption}.unit')
                         if os.path.exists(sp_path):
                             im_files.append(im_path)
                             sp_files.append(sp_path)
@@ -95,7 +95,7 @@ class UnitDataset(Dataset):
             for d in data['images']:
                 if d['split'] == mode:
                     im_path = os.path.join(fl_im, d['filename'])
-                    sp_path = os.path.join(fl_sp, 'flickr_audio/wavs', d['filename'][:-4] + f'_0.unit')
+                    sp_path = os.path.join(fl_sp, d['filename'][:-4] + f'_0.unit')
                     im_files.append(im_path)
                     sp_files.append(sp_path)
 
