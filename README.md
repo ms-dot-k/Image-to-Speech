@@ -69,7 +69,13 @@ Flickr8k_audio
 ## Extracting Speech Unit
 We directly utilized the pre-trained K-means cluster model of [link](https://github.com/facebookresearch/fairseq/tree/main/examples/textless_nlp/gslm/speech2unit).
 Please refer to the repository to extract speech unit (HuBERT Base + KM200).
-The differences between the repository is the output format, we save each speech unit by using `torch.save(extracted_unit.cpu(), save_path + '.unit')`.
+The differences between the repository is the output format, we save each speech unit by using
+```
+feat = FR.get_feature(file)
+pred = kmeans_model.predict(feat)
+pred = np.asarray(pred, dtype=np.int64)
+torch.save(pred, out_path)
+```
 Please put the extracted units as the above directory structure.
 
 ## Image Unit Extractor
