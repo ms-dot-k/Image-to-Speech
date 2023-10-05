@@ -5,7 +5,7 @@ This repository contains the PyTorch implementation of the following paper:
 > Minsu Kim, Jeongsoo Choi, Soumi Maiti, Jeong Hun Yeo, Shinji Watanabe, and Yong Man Ro<br>
 > \[[Paper](https://arxiv.org/abs/2309.08531)\] \[[Project](https://ms-dot-k.github.io/Image-to-Speech-Captioning/)\]
 
-<div align="center"><img width="30%" src="img/Img.PNG?raw=true" /></div>
+<div align="center"><img width="30%" src="img/Img.png?raw=true" /></div>
 
 ## Requirements
 - python 3.8
