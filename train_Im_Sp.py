@@ -285,28 +285,7 @@ def train(model, train_data, epochs, optimizer, scheduler, args):
                                 os.path.join(args.checkpoint_dir, 'Last_%05d.ckpt' % (step)))
                 if args.distributed:
                     dist.barrier()
-                assert 1==0, "Finishing Training, arrived total iterations"
-
-            # if args.vit_fix and step == 10000:
-            #     if args.local_rank == 0:
-            #         if args.dataparallel or args.distributed:
-            #             state_dict = model.module.state_dict()
-            #         else:
-            #             state_dict = model.state_dict()
-            #         if not os.path.exists(args.checkpoint_dir):
-            #             os.makedirs(args.checkpoint_dir)
-            #         torch.save({'state_dict': state_dict},
-            #                     os.path.join(args.checkpoint_dir, 'Vit_Fix_%05d.ckpt' % (step)))
-
-            #     for k, v in model.named_parameters():
-            #         v.requires_grad = True
-            #     params = [{'params': model.parameters()}]
-            #     optimizer = optim.AdamW(params, lr=args.lr, weight_decay=args.weight_decay, amsgrad=True)
-            #     if args.local_rank == 0:
-            #         print('Reset optimizer and train End-to-End model')
-            #         num_model = sum(p.numel() for p in model.parameters() if p.requires_grad)
-            #         num_train = sum(p.numel() for p in params[0]['params'])
-            #         print(f'Train # of params: {num_train} / {num_model}')
+                assert 1 == 0, "Finishing Training, arrived total iterations"
 
     if args.local_rank == 0:
         print('Finishing training')

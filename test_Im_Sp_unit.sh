@@ -9,7 +9,20 @@ REF=data_to/COCO_2014
 CKPT=./pretrained/Im_unit_to_Speech_Pretrained.ckpt
 Fairseq_path=path_to/fairseq
 
+Image_path_co=dir_to/COCO_2014
+Speech_path_co=dir_to/SpokenCOCO/Hubert_units
+Split_path_co=dir_to/SpokenCOCO
+Image_path_fl=dir_to/Flickr8k/Images
+Speech_path_fl=dir_to/Flickr8k_audio/Hubert_units
+Split_path_kp=dir_to/Karpathy_split
+
 python test_Im_Sp_unit.py \
+--image_path_co ${Image_path_co} \
+--speech_unit_path_co ${Speech_path_co} \
+--split_path_co ${Split_path_co} \
+--image_path_fl ${Image_path_fl} \
+--speech_unit_path_fl ${Speech_path_fl} \
+--split_path_karpathy ${Split_path_kp} \
 --architecture git-large \
 --beam_size 1 \
 --checkpoint ${CKPT} \

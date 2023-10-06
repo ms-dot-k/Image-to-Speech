@@ -18,7 +18,7 @@ This repository contains the PyTorch implementation of the following paper:
 - editdistance
 - transformers
 - timm
-- einops
+- einops 0.3.0
 - fairseq
 - https://github.com/thuanz123/enhancing-transformers
 
