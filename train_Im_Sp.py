@@ -110,7 +110,7 @@ def train_net(args):
     model.cuda()
 
     if not args.vit_fix:
-        params = [{'params': model.parameters()}]
+        params = model.parameters()
     else:
         params = []
         for k, v in model.named_parameters():
@@ -120,7 +120,7 @@ def train_net(args):
                 v.requires_grad = False
     
     if not args.vit_fix:
-        num_train = sum(p.numel() for p in params[0]['params'])
+        num_train = sum(p.numel() for p in params)
     else:
         num_train = sum(p['params'].numel() for p in params)
     if args.local_rank == 0:
