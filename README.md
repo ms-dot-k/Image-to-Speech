@@ -83,7 +83,7 @@ Please download `SeiT_weights.tar` from SeiT [github](https://github.com/naver-a
 Put `tokenizer.ckpt` and `codebook.ckpt` in `./pretrained/` directory.
 
 ## Unit-based Vocoder
-Please download pre-trained unit-based vocoder [CKPT](https://kaistackr-my.sharepoint.com/:u:/g/personal/ms_k_kaist_ac_kr/EclA4PVVEuhEuEuGXhQHxCsBYkEbrGVdn45Y2hvgApoSUA?e=XUkqw6) and [CFG](https://kaistackr-my.sharepoint.com/:u:/g/personal/ms_k_kaist_ac_kr/EVgUckoy14tKnbyt7NeSgzkBSjgcR0D7ERRguxqQ68TpYw?e=lNoin0).
+Please download pre-trained unit-based vocoder [CKPT](https://drive.google.com/file/d/15MVGWCfvt_ZjQwBR4sizQKFMb5NPQ3Qy/view?usp=drive_link) and [CFG](https://drive.google.com/file/d/15MOiXjrUJJHMdIF6bxCWIxvWwUw6z7Kj/view?usp=drive_link).
 Put `g_00950000` and `config.json` in `./Vocoder/` directory.
 
 ## Testing the Model
@@ -114,8 +114,8 @@ The pre-trained models are available. <br>
 
 | Model |       Dataset       |   BLEU-4 (COCO)  |   BLEU-4 (Flickr 8k)  | Link |
 |:-------------------:|:-------------------:|:--------:|:--------:|:--------:|
-|Image to Speech| COCO & Flickr8k | 25.9 | 20.6 | [Link](https://kaistackr-my.sharepoint.com/:u:/g/personal/ms_k_kaist_ac_kr/EQHitBzytIxFocEk6acURjMB-QErSe29Z9gyhh-vl-srlQ?e=RZOw2p)  |
-|Image unit to Speech| COCO & Flickr8k | 20.1 | 16.7 |  [Link](https://kaistackr-my.sharepoint.com/:u:/g/personal/ms_k_kaist_ac_kr/Ec6Hq6VCk5dDjA5RUw7WYvcBbICcRMNC-pej-JeUgNKROg?e=DxnYpY)  |
+|Image to Speech| COCO & Flickr8k | 25.9 | 20.6 | [Link](https://drive.google.com/file/d/10D5mWP0fCTZsb0yvxz0G-SevjwH0QkTh/view?usp=sharing)  |
+|Image unit to Speech| COCO & Flickr8k | 20.1 | 16.7 |  [Link](https://drive.google.com/file/d/107OPU-W66jCWux430AL4hCVGmmULYYpY/view?usp=sharing)  |
 
 
 ## Training the Model
@@ -168,10 +168,11 @@ In order to evaluate the entire performance of the trained model run the test co
 ## Citation
 If you find this work useful in your research, please cite the paper:
 ```
-@article{kim2023towards,
+@inproceedings{kim2023towards,
   title={Towards Practical and Efficient Image-to-Speech Captioning with Vision-Language Pre-training and Multi-modal Tokens},
   author={Kim, Minsu and Choi, Jeongsoo and Maiti, Soumi and Yeo, Jeong Hun and Watanabe, Shinji and Ro, Yong Man},
-  journal={arXiv preprint arXiv:2309.08531},
-  year={2023}
+  booktitle={2024 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP)},
+  year={2024},
+  organization={IEEE}
 }
 ```
