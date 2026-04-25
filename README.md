@@ -129,7 +129,7 @@ To train the model, run following command:
 
 ```shell
 # Distributed training example using 4 GPUs
-torchrun --standalone --nnodes=1 --nproc_per_node=4 \
+CUDA_VISIBLE_DEVICES=0,1,2,3 torchrun --standalone --nnodes=1 --nproc_per_node=4 \
 train_Im_Sp.py \
 --image_path_co dir_to/COCO_2014 \
 --speech_unit_path_co dir_to/SpokenCOCO/Hubert_units \
@@ -144,7 +144,6 @@ train_Im_Sp.py \
 --batch_size 16 \
 --eval_step 5000 \
 --lr 5e-5 \
---gpu 0,1,2,3 \
 --update_frequency 1 \
 --start_epoch 0 \
 --vit_fix \
@@ -160,7 +159,7 @@ Descriptions of training parameters are as follows:
 - `--batch_size`: batch size 
 - `--eval_step`: steps to perform evaluation
 - `--dataparallel`: Use DataParallel
-- `--gpu`: gpu number for training
+- `--gpu`: gpu number for training (DEPRECATED, use CUDA_VISIBLE_DEVICES behind torchrun)
 - `--lr`: learning rate
 - `--update_frequency`: gradient accumulation steps
 - `--vit_fix`: image encoder freeze
