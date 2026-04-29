@@ -69,7 +69,7 @@ Flickr8k_audio
 ## Extracting Speech Unit
 We directly utilized the pre-trained K-means cluster model of [link](https://github.com/facebookresearch/fairseq/tree/main/examples/textless_nlp/gslm/speech2unit).
 Please refer to the repository to extract speech unit (HuBERT Base + KM200).
-We use different output format with the repository, we save each speech unit by using
+We use different output format with the repository, we save each speech unit by using (assuming the older versions of the code circa 2018)
 ```
 feat = FR.get_feature(file)
 pred = kmeans_model.predict(feat)
@@ -77,6 +77,11 @@ pred = np.asarray(pred, dtype=np.int64)
 torch.save(pred, out_path)
 ```
 Please put the extracted units as the above directory structure.
+
+Using modern libraries (edit the file paths in the convert.py itself:
+```
+python3 convert.py
+```
 
 ## Image Unit Extractor
 Please download `SeiT_weights.tar` from SeiT [github](https://github.com/naver-ai/seit/releases/tag/v0.0) and extract it.
@@ -124,7 +129,7 @@ To train the model, run following command:
 
 ```shell
 # Distributed training example using 4 GPUs
-torchrun --standalone --nnodes=1 --nproc_per_node=4 \
+CUDA_VISIBLE_DEVICES=0,1,2,3 torchrun --standalone --nnodes=1 --nproc_per_node=4 \
 train_Im_Sp.py \
 --image_path_co dir_to/COCO_2014 \
 --speech_unit_path_co dir_to/SpokenCOCO/Hubert_units \
@@ -139,7 +144,6 @@ train_Im_Sp.py \
 --batch_size 16 \
 --eval_step 5000 \
 --lr 5e-5 \
---gpu 0,1,2,3 \
 --update_frequency 1 \
 --start_epoch 0 \
 --vit_fix \
@@ -155,7 +159,7 @@ Descriptions of training parameters are as follows:
 - `--batch_size`: batch size 
 - `--eval_step`: steps to perform evaluation
 - `--dataparallel`: Use DataParallel
-- `--gpu`: gpu number for training
+- `--gpu`: gpu number for training (DEPRECATED, use CUDA_VISIBLE_DEVICES behind torchrun)
 - `--lr`: learning rate
 - `--update_frequency`: gradient accumulation steps
 - `--vit_fix`: image encoder freeze
